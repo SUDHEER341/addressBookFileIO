@@ -13,6 +13,11 @@ public class Contacts {
     private String email;
     public Contacts() {
     }
+
+    public Contacts(int count, String fName, String lName, String address, String city, String state, String zip, String phNo, String email) {
+
+    }
+
     public String getF_name() {
         return f_name;
     }
