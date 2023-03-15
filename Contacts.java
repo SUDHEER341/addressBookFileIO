@@ -70,7 +70,6 @@ public class Contacts {
         this.ph_no = ph_no;
         this.email = email;
     }
-
     public String toString() {
         return "\nFirst name: "+f_name+"\nLast name: "+l_name
                 +"\nAddress: "+address+"\nCity: "+city
