@@ -6,6 +6,7 @@ public class AddressBookMain {
     String searchByName;
     static int option;
     static Contacts contact;
+    int count = 1;
     static ArrayList <Contacts> contacts = new ArrayList<Contacts>();
     public void CreatingContact() {
         Scanner sc = new Scanner(System.in);
@@ -27,9 +28,10 @@ public class AddressBookMain {
         System.out.println("Enter the email address");
         String email = sc.next();
         System.out.println("Contact created");
-        contact = new Contacts(f_name,l_name,address,city,state,zip,ph_no,email);
+        contact = new Contacts(count, f_name,l_name,address,city,state,zip,ph_no,email);
     }
     public void addingContacts() {
+        count++;
         contacts.add(contact);
     }
     public void editContacts() {
@@ -87,7 +89,8 @@ public class AddressBookMain {
         }
     }
     public void menu() {
-        System.out.println("Menu: (Enter the respective number)\n1. Add contact 2. Edit contact 3. Delete 4. Display 5.Exit");
+        System.out.println("Menu: (Enter the respective number)" +
+                            "\n1. Add contact 2. Edit contact 3. Delete 4. Display 5.Exit");
         option = sc.nextInt();
         switch(option) {
             case 1:
@@ -96,13 +99,15 @@ public class AddressBookMain {
                 addressBook.menu();
                 break;
             case 2:
-                System.out.println("Enter the first name to search and edit contact with first name");
+                System.out.println("Enter the first name to search and edit " +
+                                    "contact with first name");
                 searchByName = sc.next();
                 addressBook.editContacts();
                 addressBook.menu();
                 break;
             case 3:
-                System.out.println("Enter the first name to search and edit contact with first name");
+                System.out.println("Enter the first name to search and edit contact " +
+                                    "with first name");
                 searchByName = sc.next();
                 addressBook.deleteContact();
                 addressBook.menu();
@@ -123,7 +128,7 @@ public class AddressBookMain {
         }
     }
     public static void main(String[] args) {
-        System.out.println("Welcome to  address book program");
+        System.out.println("Welcome to  address book system");
         addressBook.menu();
     }
 }
